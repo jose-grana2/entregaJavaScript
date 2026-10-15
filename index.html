@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Entrega Ejercicios 1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f1a;
+      --surface: #1a1a2e;
+      --card: #16213e;
+      --accent: #7c3aed;
+      --accent2: #06b6d4;
+      --text: #e2e8f0;
+      --muted: #94a3b8;
+      --border: #2d2d4e;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      padding: 2rem 1rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.3rem 1rem;
+      border-radius: 999px;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      background: linear-gradient(135deg, #e2e8f0, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.75rem;
+    }
+
+    header p {
+      color: var(--muted);
+      font-size: 1.1rem;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+      box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+    }
+
+    .card:hover::before { opacity: 0.05; }
+
+    .card-number {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent2);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .card p {
+      font-size: 0.875rem;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .card-link {
+      font-size: 0.8rem;
+      color: var(--accent2);
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 4rem;
+      color: var(--muted);
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="badge">JavaScript · Entrega 1</div>
+    <h1>Ejercicios JS</h1>
+    <p>Colección de ejercicios prácticos para dominar eventos, DOM, formularios y más.</p>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" href="js_ejercicio_1.html">
+      <span class="card-number">Ejercicio 01</span>
+      <div class="card-icon">🎨</div>
+      <h2>Cambiador de Color de Fondo</h2>
+      <p>Practica eventos en JavaScript y manipulación de estilos del DOM cambiando el color de fondo aleatoriamente.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_2.html">
+      <span class="card-number">Ejercicio 02</span>
+      <div class="card-icon">🖱️</div>
+      <h2>Contador de Clics</h2>
+      <p>Practica el manejo de eventos y la actualización del contenido del DOM con un contador de clics.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_3.html">
+      <span class="card-number">Ejercicio 03</span>
+      <div class="card-icon">📋</div>
+      <h2>Lista Dinámica</h2>
+      <p>Trabaja con la creación, eliminación y manipulación de elementos del DOM en una lista interactiva.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_4.html">
+      <span class="card-number">Ejercicio 04</span>
+      <div class="card-icon">🔍</div>
+      <h2>Filtro de Búsqueda en Tiempo Real</h2>
+      <p>Practica la interacción entre eventos del DOM y lógica en JavaScript filtrando listas dinámicamente.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_5.html">
+      <span class="card-number">Ejercicio 05</span>
+      <div class="card-icon">🧮</div>
+      <h2>Calculadora Sencilla</h2>
+      <p>Practica formularios, eventos y lógica básica con una calculadora de cuatro operaciones.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_6.html">
+      <span class="card-number">Ejercicio 06</span>
+      <div class="card-icon">⏱️</div>
+      <h2>Temporizador con Inicio, Pausa y Reinicio</h2>
+      <p>Practica funciones de temporización y manipulación del DOM con un cronómetro completo.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_7.html">
+      <span class="card-number">Ejercicio 07</span>
+      <div class="card-icon">🔐</div>
+      <h2>Generador de Contraseñas Aleatorias</h2>
+      <p>Practica generación de cadenas aleatorias y uso de formularios para crear contraseñas seguras.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_8.html">
+      <span class="card-number">Ejercicio 08</span>
+      <div class="card-icon">📝</div>
+      <h2>Contador de Palabras y Caracteres</h2>
+      <p>Practica eventos en tiempo real y manipulación avanzada del DOM contando palabras y caracteres.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+    <a class="card" href="js_ejercicio_9.html">
+      <span class="card-number">Ejercicio 09</span>
+      <div class="card-icon">✅</div>
+      <h2>Lista de Tareas con LocalStorage</h2>
+      <p>Practica persistencia de datos con localStorage en una aplicación de lista de tareas completa.</p>
+      <span class="card-link">Ir al ejercicio →</span>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>JS Entrega de Ejercicios 1 · Hecho con 💜</p>
+  </footer>
+
+</body>
+</html>
